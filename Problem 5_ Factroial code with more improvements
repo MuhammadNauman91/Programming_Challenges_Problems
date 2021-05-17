@@ -1,0 +1,47 @@
+/*
+***********************************************************************************
+*	Author: 			Muhammad Nauman Nasir
+*	Creation Date:      09.13.2020
+*	Last Edit Date:     09.13.2020
+*	Revision:			0
+*	Version:			1
+*	File   :            factorial.cpp, factorial.h, factorial.main.cpp togather
+**********************************************************************************/
+#include <iostream>
+#include <string>
+#include <stdio.h>
+
+/*!
+    * This function is used to calculate the factorial of a number For example 3! = 3*2*1 = 6 
+    * Contain NULL pointer safety check also we can use smart pointers also here so no need for this check will be there as smart pointer deletes automatically 
+    * @param  data [in]  Input number as (num)
+    * @return  num [out] Factorial of the number 
+*/
+template<typename  T>
+inline T fact(T &factorial)
+ {
+  if (factorial == NULL)
+  {
+    // Do nothing or perform some defined actions( means activate a flag for warning or severity level)
+  }
+  else
+  {
+    T b;
+    for(b=factorial;b>2;b--)
+    {
+        factorial  *= (b-1);
+    }
+    return factorial;
+  }
+}
+int main()
+{
+    int num, result;
+    ///< defining a number whose factorial needs to be calculated
+    num = 3;
+    result = fact(num);
+    ///< printing the factorial of a number
+    std::cout<< result;
+    return 0;
+}
+
